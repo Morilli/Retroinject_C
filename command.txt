@@ -1,0 +1,2 @@
+Debug compilation: gcc -std=c18 -Wall -g ./retroinject.c -o retroinject
+Release compilation: gcc -std=c18 -Wall -s -Os ./retroinject.c -o retroinject
