@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
+#include <assert.h>
 
 int vc_size_lookup(const uint8_t input)
 {
@@ -49,7 +50,7 @@ int main(int argc, char** argv)
     rewind(input_elf);
 
     uint8_t* elf_buffer = malloc(elf_length);
-    fread(elf_buffer, 1, elf_length, input_elf);
+    assert(fread(elf_buffer, 1, elf_length, input_elf) == elf_length);
     fclose(input_elf);
 
     // read in the rom file
@@ -58,7 +59,7 @@ int main(int argc, char** argv)
     rewind(input_rom);
 
     uint8_t* rom_buffer = malloc(rom_length);
-    fread(rom_buffer, 1, rom_length, input_rom);
+    assert(fread(rom_buffer, 1, rom_length, input_rom) == rom_length);
     fclose(input_rom);
 
     int wup_index;
