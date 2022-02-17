@@ -2,5 +2,6 @@
 .vscode/
 .idea/
 
+*.o
 retroinject
 retroinject.exe
